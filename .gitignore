@@ -12,5 +12,6 @@
 *.la
 *.a
 
-# Compiled Executables
+# Compiled Executables & things
 *.out
+result.html
