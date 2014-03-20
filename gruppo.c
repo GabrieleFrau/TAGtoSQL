@@ -58,23 +58,23 @@ int sqlMain ( char *filebuffer )
         }
         printf ( "\nOperation done successfully\n" );
         sqlite3_close ( db );
-        strcat(finale,"<TABLE BORDER = \"1\"");
-        strcat(finale,query.header);
-        strcat(finale,query.table);      
-        strcat(finale,"</TABLE>");
+        strcat( finale, "<TABLE BORDER = \"1\"" );
+        strcat( finale, query.header );
+        strcat( finale, query.table );
+        strcat( finale, "</TABLE>" );
         tmp += matches[MATCH_TOTALE].rm_eo;
         printf ( "\n-----------------------------------------------------------------------------------------------------\n" );
     }
-    strncat(finale, tmp, strlen(tmp) - 1);
-    FILE * fp = fopen("result.html","w");
-    if(fp != NULL)
+    strncat( finale, tmp, strlen( tmp ) - 1 );
+    FILE *fp = fopen( "result.html", "w" );
+    if( fp != NULL )
     {
-      fputs(finale,fp);
-      fclose(fp);
-      return EXIT_SUCCESS;
+        fputs( finale, fp );
+        fclose( fp );
+        return EXIT_SUCCESS;
     }
     else
-      return EXIT_FAILURE;
+        return EXIT_FAILURE;
 }
 
 static int sqlcallback ( void *data, int argc, char **argv, char **azColName )
