@@ -58,7 +58,7 @@ int sqlMain ( char *filebuffer )
         }
         printf ( "\nOperation done successfully\n" );
         sqlite3_close ( db );
-        strcat( finale, "<TABLE BORDER = \"1\"" );
+        strcat( finale, "<TABLE BORDER = \"1\">" );
         strcat( finale, query.header );
         strcat( finale, query.table );
         strcat( finale, "</TABLE>" );
