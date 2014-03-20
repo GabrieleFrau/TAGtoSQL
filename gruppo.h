@@ -7,15 +7,21 @@
 #include <string.h>
 
 #define SIZE_OF_MATCHES 3
-#define MAX_MATCHES 3
-typedef struct squery
-	{
-		int noHeader;
-		char header[256];
-		char table[256];	
-	}sqlquery;
+#define MAX_FILE_LENGTH 4096
+#define TRUE 1
+#define FALSE 0
+#define MATCH_TOTALE 0
+#define MATCH_NOMEDB 1
+#define MATCH_QUERY 2
 
-int sqlMain(char* filebuffer);
-static int sqlcallback(void *data, int argc, char **argv, char **azColName);
+typedef struct squery
+{
+    int noHeader;
+    char header[512];
+    char table[512];
+} sqlquery;
+
+int sqlMain( char *filebuffer );
+static int sqlcallback( void *data, int argc, char **argv, char **azColName );
 
 #endif
